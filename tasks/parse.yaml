@@ -5,7 +5,7 @@
   when: ansible_network_os is undefined
 
 - name: parse cli output and return facts
-  text_parser:
+  network_parser:
     parser: "{{ filename }}"
     contents: "{{ contents }}"
   with_first_found:
