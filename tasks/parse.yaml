@@ -9,7 +9,9 @@
     parser: "{{ filename }}"
     contents: "{{ contents }}"
   with_first_found:
-    - files: "{{ parser }}.yaml"
+    - files:
+        - "{{ parser }}.yaml"
+        - "{{ parser }}.yml"
       paths:
         - "{{ parser_path }}"
         - "/etc/ansible/network/parsers/{{ ansible_network_os }}"
